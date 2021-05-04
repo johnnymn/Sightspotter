@@ -96,6 +96,34 @@ class ViewController: UIViewController,
     }
   }
 
+  // This method gets called when the user's
+  // heading is updated by the location manager.
+  func locationManager(
+          _ manager: CLLocationManager,
+          didUpdateHeading newHeading: CLHeading) {
+
+    // Do all this work on the main thread.
+    DispatchQueue.main.async {
+      self.headingCount += 1
+
+      // We want to only take the second reading
+      // of the heading reported by the location
+      // manager so that we get better accuracy.
+      guard self.headingCount == 2 else {
+        return
+      }
+
+      // Update the user heading.
+      self.userHeading = newHeading.magneticHeading
+
+      // Prevent the locationManager from
+      // sending us more heading updates.
+      self.locationManager.stopUpdatingHeading()
+
+      self.createSights()
+    }
+  }
+
   /// Fetch the sights from the Wikipedia API,
   /// store them as a JSON string, and start
   /// observing the user's heading.
@@ -119,5 +147,9 @@ class ViewController: UIViewController,
       sightsJSON = JSON(data)
       locationManager.startUpdatingHeading()
     }
+  }
+
+  func createSights() {
+
   }
 }

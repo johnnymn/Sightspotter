@@ -8,21 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		0F4271C582EF72EA54B51FCD /* Pods_Sightspotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB474F7F1302BDC1492F9060 /* Pods_Sightspotter.framework */; };
+		AACA376ADF4B19CB0D275ADD /* Heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA3839B1CBAB637EA533CD /* Heading.swift */; };
 		AACA376D795FEF4C7A4B189B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AACA3DBB72A86F044FAA9E52 /* Assets.xcassets */; };
 		AACA3776B991434BF126198F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACA34F4CF785938C8F3C64F /* Main.storyboard */; };
 		AACA37B917FD9BD9D7E95B43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA3AC4E4E864F6F78EAA08 /* ViewController.swift */; };
 		AACA38101E4D4425FF60FFCA /* Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AACA3247B036AF8B8355A895 /* Scene.sks */; };
 		AACA398BAE165FCB71B3EBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA3E194560A753D9259456 /* AppDelegate.swift */; };
 		AACA3DB337A328C4BF7776A7 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA34942D2B55EC2E05FF47 /* Scene.swift */; };
+		AACA3E06638A913BC2D85676 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA328DCE3DDA0BE2B4F273 /* Math.swift */; };
 		AACA3EEAF5F59889B81AA1AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACA3C8A3958D5122C499915 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		214A68787374BEADF7884E25 /* Pods-Sightspotter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sightspotter.debug.xcconfig"; path = "Target Support Files/Pods-Sightspotter/Pods-Sightspotter.debug.xcconfig"; sourceTree = "<group>"; };
 		AACA3247B036AF8B8355A895 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
+		AACA328DCE3DDA0BE2B4F273 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		AACA3312403EF4614103F978 /* Sightspotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sightspotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACA34942D2B55EC2E05FF47 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		AACA36179585BEEC851D6709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AACA3839B1CBAB637EA533CD /* Heading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heading.swift; sourceTree = "<group>"; };
 		AACA388EC27663EC00902AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AACA3AC4E4E864F6F78EAA08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AACA3CDC65FBA755A27798A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 				AACA3247B036AF8B8355A895 /* Scene.sks */,
 				AACA34942D2B55EC2E05FF47 /* Scene.swift */,
 				AACA3AC4E4E864F6F78EAA08 /* ViewController.swift */,
+				AACA328DCE3DDA0BE2B4F273 /* Math.swift */,
+				AACA3839B1CBAB637EA533CD /* Heading.swift */,
 			);
 			path = Sightspotter;
 			sourceTree = "<group>";
@@ -213,6 +219,8 @@
 				AACA398BAE165FCB71B3EBF6 /* AppDelegate.swift in Sources */,
 				AACA3DB337A328C4BF7776A7 /* Scene.swift in Sources */,
 				AACA37B917FD9BD9D7E95B43 /* ViewController.swift in Sources */,
+				AACA3E06638A913BC2D85676 /* Math.swift in Sources */,
+				AACA376ADF4B19CB0D275ADD /* Heading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
