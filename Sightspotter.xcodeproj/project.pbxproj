@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4271C582EF72EA54B51FCD /* Pods_Sightspotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB474F7F1302BDC1492F9060 /* Pods_Sightspotter.framework */; };
 		AACA376D795FEF4C7A4B189B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AACA3DBB72A86F044FAA9E52 /* Assets.xcassets */; };
 		AACA3776B991434BF126198F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AACA34F4CF785938C8F3C64F /* Main.storyboard */; };
 		AACA37B917FD9BD9D7E95B43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA3AC4E4E864F6F78EAA08 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		214A68787374BEADF7884E25 /* Pods-Sightspotter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sightspotter.debug.xcconfig"; path = "Target Support Files/Pods-Sightspotter/Pods-Sightspotter.debug.xcconfig"; sourceTree = "<group>"; };
 		AACA3247B036AF8B8355A895 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
 		AACA3312403EF4614103F978 /* Sightspotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sightspotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACA34942D2B55EC2E05FF47 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		AACA3CDC65FBA755A27798A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AACA3DBB72A86F044FAA9E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AACA3E194560A753D9259456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B2BE83A250A5E8FAC10E265E /* Pods-Sightspotter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sightspotter.release.xcconfig"; path = "Target Support Files/Pods-Sightspotter/Pods-Sightspotter.release.xcconfig"; sourceTree = "<group>"; };
+		DB474F7F1302BDC1492F9060 /* Pods_Sightspotter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sightspotter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,12 +37,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F4271C582EF72EA54B51FCD /* Pods_Sightspotter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EAEED425F8360BC857F80B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				214A68787374BEADF7884E25 /* Pods-Sightspotter.debug.xcconfig */,
+				B2BE83A250A5E8FAC10E265E /* Pods-Sightspotter.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		176465543A283709A89D0135 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB474F7F1302BDC1492F9060 /* Pods_Sightspotter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AACA30729440E6755D695DB2 /* Sightspotter */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +82,8 @@
 			children = (
 				AACA38E616331E52BB0A6014 /* Products */,
 				AACA30729440E6755D695DB2 /* Sightspotter */,
+				0EAEED425F8360BC857F80B6 /* Pods */,
+				176465543A283709A89D0135 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AACA3A3F4994D76CBE37F10D /* Build configuration list for PBXNativeTarget "Sightspotter" */;
 			buildPhases = (
+				22BA6F75D93CEADA03DFCC86 /* [CP] Check Pods Manifest.lock */,
 				AACA3A0A5FA1787C109399C1 /* Sources */,
 				AACA3DCA5DDE4D59F197CF30 /* Frameworks */,
 				AACA3B57C06DD395514C8179 /* Resources */,
+				78E532776E6F35F71575BCE6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22BA6F75D93CEADA03DFCC86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sightspotter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78E532776E6F35F71575BCE6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sightspotter/Pods-Sightspotter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sightspotter/Pods-Sightspotter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AACA3A0A5FA1787C109399C1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -170,6 +240,7 @@
 /* Begin XCBuildConfiguration section */
 		AACA39FACA3E5F07D982825F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2BE83A250A5E8FAC10E265E /* Pods-Sightspotter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -185,6 +256,7 @@
 		};
 		AACA3AAE3BF111A45D0BA96E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 214A68787374BEADF7884E25 /* Pods-Sightspotter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

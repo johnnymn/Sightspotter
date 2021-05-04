@@ -1,0 +1,6 @@
+framework module Pods_Sightspotter {
+  umbrella header "Pods-Sightspotter-umbrella.h"
+
+  export *
+  module * { export * }
+}
