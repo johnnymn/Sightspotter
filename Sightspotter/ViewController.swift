@@ -18,6 +18,12 @@ class ViewController: UIViewController,
   // from the Wikipedia's API.
   var sightsJSON: JSON!
 
+  // Link the anchors to the corresponding
+  // Wikipedia page title. Use the UUID of
+  // the anchor as key and the page title
+  // as value.
+  var pages = [UUID: String]()
+
   @IBOutlet var sceneView: ARSKView!
 
   override func viewDidLoad() {
@@ -149,7 +155,58 @@ class ViewController: UIViewController,
     }
   }
 
+  /// Creates the anchors for each of the
+  /// sightings we get from the Wikipedia API.
   func createSights() {
+    // Loop over the Wikipedia pages.
+    for page in sightsJSON["query"]["pages"].dictionaryValue.values {
+      // Make a location from the
+      // coordinates in the page.
+      let latitude = page["coordinates"][0]["lat"].doubleValue
+      let longitude = page["coordinates"][0]["lon"].doubleValue
+      let location = CLLocation(latitude: latitude, longitude: longitude)
 
+      // Calculate the distance from
+      // the user to the location.
+      let distance = Float(userLocation.distance(from: location))
+      // Calculate the azimuth (direction).
+      let azimuth = direction(from: userLocation, to: location)
+      // Calculate the angle from the
+      // user's location to that direction.
+      let angle = deg2rad(azimuth - userHeading)
+
+      // Create the rotation matrices.
+      let rotationHorizontal = simd_float4x4(SCNMatrix4MakeRotation(
+              Float(angle), 1, 0, 0))
+      let rotationVertical = simd_float4x4(SCNMatrix4MakeRotation(
+              -0.2 + Float(distance / 6000), 0, 1, 0))
+      // Combine the horizontal and vertical
+      // matrices to get the rotation.
+      let rotation = simd_mul(rotationHorizontal, rotationVertical)
+
+      guard let sceneView = view as? ARSKView else {
+        return
+      }
+
+      guard let frame = sceneView.session.currentFrame else {
+        return
+      }
+
+      // Combine the rotation with
+      // the camera transform.
+      let cameraRotation = simd_mul(frame.camera.transform, rotation)
+
+      // Create a matrix to position
+      // the anchor into the screen.
+      var translation = matrix_identity_float4x4
+      translation.columns.3.z = -(distance / 200)
+      let transform = simd_mul(cameraRotation, translation)
+
+      // Create a new anchor and add
+      // it to the pages dictionary.
+      let anchor = ARAnchor(transform: transform)
+      sceneView.session.add(anchor: anchor)
+      pages[anchor.identifier] = page["title"].string ?? "Unknown"
+    }
   }
 }
