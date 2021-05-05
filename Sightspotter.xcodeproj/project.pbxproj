@@ -54,7 +54,6 @@
 				214A68787374BEADF7884E25 /* Pods-Sightspotter.debug.xcconfig */,
 				B2BE83A250A5E8FAC10E265E /* Pods-Sightspotter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

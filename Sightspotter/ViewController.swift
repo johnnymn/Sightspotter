@@ -6,6 +6,8 @@ import SwiftyJSON
 
 class ViewController: UIViewController,
         ARSKViewDelegate, CLLocationManagerDelegate {
+  @IBOutlet var sceneView: ARSKView!
+
   let locationManager = CLLocationManager()
   var userLocation = CLLocation()
 
@@ -24,17 +26,11 @@ class ViewController: UIViewController,
   // as value.
   var pages = [UUID: String]()
 
-  @IBOutlet var sceneView: ARSKView!
-
   override func viewDidLoad() {
     super.viewDidLoad()
 
     // Set the view's delegate
     sceneView.delegate = self
-
-    // Show statistics such as fps and node count
-    sceneView.showsFPS = true
-    sceneView.showsNodeCount = true
 
     // Load the SKScene from 'Scene.sks'
     if let scene = SKScene(fileNamed: "Scene") {
@@ -45,6 +41,7 @@ class ViewController: UIViewController,
     // We need the best possible
     // accuracy for the user location.
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    locationManager.requestWhenInUseAuthorization()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +66,7 @@ class ViewController: UIViewController,
     let labelNode = SKLabelNode(text: pages[anchor.identifier])
     labelNode.horizontalAlignmentMode = .center
     labelNode.verticalAlignmentMode = .center
+    labelNode.fontSize = 70
 
     // Scale the label.
     let size = labelNode.frame.size.applying(
@@ -210,10 +208,6 @@ class ViewController: UIViewController,
       // Combine the horizontal and vertical
       // matrices to get the rotation.
       let rotation = simd_mul(rotationHorizontal, rotationVertical)
-
-      guard let sceneView = view as? ARSKView else {
-        return
-      }
 
       guard let frame = sceneView.session.currentFrame else {
         return
