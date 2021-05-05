@@ -65,7 +65,34 @@ class ViewController: UIViewController,
   }
 
   func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
-    nil
+    // Title label.
+    let labelNode = SKLabelNode(text: pages[anchor.identifier])
+    labelNode.horizontalAlignmentMode = .center
+    labelNode.verticalAlignmentMode = .center
+
+    // Scale the label.
+    let size = labelNode.frame.size.applying(
+            CGAffineTransform(scaleX: 1.1, y: 1.4))
+
+    // Create a background node
+    // and round the corners.
+    let backgroundNode = SKShapeNode(rectOf: size, cornerRadius: 10)
+    // Fill it with a random color.
+    backgroundNode.fillColor = UIColor(
+            hue: CGFloat.random(in: 0...1),
+            saturation: 0.5,
+            brightness: 0.4,
+            alpha: 0.9)
+
+    // Draw a border around the
+    // background node.
+    backgroundNode.strokeColor = backgroundNode.fillColor.withAlphaComponent(1)
+    backgroundNode.lineWidth = 2
+
+    // Add the label to the background.
+    backgroundNode.addChild(labelNode)
+
+    return backgroundNode
   }
 
   /// Request location if authorized.
