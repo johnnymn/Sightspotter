@@ -14,8 +14,8 @@ func direction(from pointA: CLLocation, to pointB: CLLocation) -> Double {
   let lonB = deg2rad(pointB.coordinate.longitude)
 
   let lonDelta = lonB - longA
-  let y = sin(lonDelta) * cos(lonB)
-  let x = cos(latA) * sin(latB) - sin(latA) * cos(latB) * cos(lonDelta)
+  let pointY = sin(lonDelta) * cos(lonB)
+  let pointX = cos(latA) * sin(latB) - sin(latA) * cos(latB) * cos(lonDelta)
 
-  return rad2deg(atan2(y, x))
+  return rad2deg(atan2(pointY, pointX))
 }
